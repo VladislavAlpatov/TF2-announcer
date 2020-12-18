@@ -1,13 +1,11 @@
 ﻿#include <Windows.h>
-#include <iostream>
-#include <vector>
 #include "tf2.h"
 
 DWORD WINAPI HackThread(HMODULE hModule)
 {
-    AllocConsole();
-    FILE* f;
-    freopen_s(&f, "CONOUT$", "w", stdout);
+    //AllocConsole();
+    //FILE* f;
+    //freopen_s(&f, "CONOUT$", "w", stdout);
 
     DWORD serverbase = (DWORD)GetModuleHandle(L"server.dll");
 
@@ -55,8 +53,8 @@ DWORD WINAPI HackThread(HMODULE hModule)
         }
         Sleep(100);
     }
-    fclose(f);
-    FreeConsole();
+    //fclose(f);
+    //FreeConsole();
     FreeLibraryAndExitThread(hModule, 0);
     return 0;
 }
